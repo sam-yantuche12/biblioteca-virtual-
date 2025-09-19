@@ -2,6 +2,8 @@ package vista;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class panelBiblioteca extends JPanel {
 
@@ -22,5 +24,26 @@ public class panelBiblioteca extends JPanel {
             b.setPreferredSize(new Dimension(150, 40));
             add(b);
         }
+
+        // Conectar botones a acciones
+        btnLogin.addActionListener(e -> abrirLogin());
+        btnFavoritos.addActionListener(e -> abrirFavoritos());
+        btnHistorial.addActionListener(e -> abrirHistorial());
+    }
+
+    // Métodos para manejar acciones de los botones
+    private void abrirLogin() {
+        JOptionPane.showMessageDialog(this, "Abriendo ventana de Login...");
+       
+    }
+
+    private void abrirFavoritos() {
+        JOptionPane.showMessageDialog(this, "Mostrando tus Favoritos...");
+       
+    }
+
+    private void abrirHistorial() {
+        JOptionPane.showMessageDialog(this, "Mostrando tu Historial...");
+       
     }
 }
