@@ -1,11 +1,8 @@
-import javax.swing.SwingUtilities;
 import vista.ventanaPrincipal;
 
 public class Main {
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            ventanaPrincipal ventana = new ventanaPrincipal();
-            ventana.setVisible(true);
-        });
+        ventanaPrincipal ventana = new ventanaPrincipal();
+        ventana.setVisible(true);
     }
 }

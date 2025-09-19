@@ -1,6 +1,6 @@
 package Persistencia;
 
-import modulo.Libro;
+import Modulo.Libro; // ✅ Importa la clase correctamente
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ public class ArchivoLibros {
     private static final String RUTA = "data/libros.txt";
 
     // Guardar un libro
-    public static void guardarLibro(libros libro) {
+    public static void guardarLibro(Libro libro) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(RUTA, true))) {
             bw.write(libro.getTitulo() + ";" + libro.getAutor() + ";" + libro.getGenero());
             bw.newLine();

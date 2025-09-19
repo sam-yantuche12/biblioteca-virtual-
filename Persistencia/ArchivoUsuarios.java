@@ -1,7 +1,6 @@
-
 package Persistencia;
 
-import Modulo.Usuarios;
+import Modulo.Usuario;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,16 +8,16 @@ import java.util.List;
 public class ArchivoUsuarios {
     private static final String RUTA = "data/usuarios.txt";
 
-    public static void guardarUsuario(usuarios usuarios) {
+    public static void guardarUsuario(Usuario usuario) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(RUTA, true))) {
-            bw.write(usuarios.getNombre() + ";" + usuarios.getCorreo());
+            bw.write(usuario.getNombre() + ";" + usuario.getCorreo());
             bw.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static List<usuarios> cargarUsuarios() {
+    public static List<Usuario> cargarUsuarios() {
         List<Usuario> lista = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(RUTA))) {
             String linea;
